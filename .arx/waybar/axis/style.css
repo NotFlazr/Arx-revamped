@@ -1,0 +1,195 @@
+@import url("colors-matu.css");
+/* Base */
+/*@define-color background            @surface_container_lowest;*/
+@define-color border                @outline_variant;
+@define-color foreground            @on_surface;
+
+/* Workspace colors */
+@define-color w                     @on_surface_variant;
+@define-color wa                    @primary;
+
+/* Module accents */
+@define-color c                     @on_surface;
+@define-color wi                    @secondary;
+@define-color pu                    @primary;
+@define-color bl                    @tertiary;
+@define-color blue                  @inverse_primary;
+@define-color a                     @primary;
+
+/* States */
+@define-color warning               @tertiary;
+@define-color error_color           @error;
+@define-color success               @primary;
+
+/* Sliders */
+@define-color slider_bg             @surface_container_high;
+@define-color slider_fg             @primary;
+
+* {
+    /* Use a standard font size for clarity on a slim bar */
+    font-family: "Google Sans Flex","JetBrainsMono Nerd Font Propo", sans-serif;
+    font-size: 13px;
+    /* Remove default margins/padding from all elements to start fresh */
+    margin: 0;
+    padding: 0;
+}
+
+window#waybar {
+    background-color: @background;
+    border-radius: 9px;
+    border: 2px solid @border;
+    color: #ffffff;
+    /* Vertical bar padding - only left/right for centering */
+    padding: 0 4px; 
+    min-width: 0; 
+}
+
+/* --- BRINGING MODULES CLOSER (VERTICALLY) --- */
+#tray,
+#bluetooth,
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#wireplumber,
+#custom-media,
+#tray,
+#mode,
+#idle_inhibitor,
+#scratchpad,
+#power-profiles-daemon,
+#mpd,
+#language,
+#keyboard-state {
+    background: transparent;
+    padding: 2px 0;
+    margin: 0;
+    color: #ffffff;
+}
+#bluetooth,
+#backlight,
+#network,
+#pulseaudio{
+  font-size: small;
+   padding: 0px 8px;
+
+}
+#backlight {
+    padding: 0px 8px;
+    margin: 0;
+    color: @bl;
+}
+
+#pulseaudio {
+    padding: 2px 0;
+    margin: 0;
+    color: @pu;
+}
+
+#bluetooth {
+    padding: 2px 0;
+    margin: 0;
+    color: @blue;
+}
+
+/* Specific tightening for the center and sides */
+#window,
+#workspaces {
+    margin: 0;
+}
+
+#network {
+    padding: 2px 0;
+    margin: 0;
+    color: @wi;
+}
+
+#clock {
+    color: @c;
+    font-family: "Bungee";
+    padding: 0px 8;
+    margin: 0;
+}
+
+/* --- SLIM WORKSPACES (VERTICAL) --- */
+
+#workspaces {
+    padding: 0;
+    font-size: 16px;
+}
+
+#workspaces button {
+    padding: 0px 4px;
+    margin: 0px 0;
+    background-color: transparent;
+    color: @w;
+    min-height: 20px;
+    min-width: 20px;
+    border-radius: 4px;
+}
+
+#workspaces button.active {
+    color: @wa;
+}
+
+#workspaces button.urgent {
+    color: #eb4d4b;
+}
+
+/* --- SLIM SLIDERS (VERTICAL) --- */
+
+#backlight-slider trough,
+#pulseaudio-slider {
+    padding: 0;
+    margin: 0;
+}
+
+#pulseaudio-slider slider {
+    min-height: 0px;
+    min-width: 0px;
+    opacity: 0;
+    background-image: none;
+    border: none;
+    box-shadow: none;
+}
+
+#pulseaudio-slider trough {
+    min-height: 1px;
+    min-width: 10px;
+    border-radius: 5px;
+    background: black;
+}
+
+#pulseaudio-slider highlight {
+    min-height: 1px;
+    border-radius: 5px;
+    background: green;
+}
+
+/* --- UTILITY & STATES --- */
+
+#battery.charging, #battery.plugged {
+    color: #ffffff;
+    background-color: #26A65B;
+}
+
+#tray {
+    padding: 2px 0;
+    margin: 0;
+}
+
+#network.disconnected {
+    color: #f53c3c;
+}
+
+#custom-arch {
+    font-size: 20px;
+    padding: 0px 8;
+    margin: 0;
+    color: @a;
+}

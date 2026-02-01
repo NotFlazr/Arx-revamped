@@ -1,0 +1,145 @@
+@import "colors.rasi"
+/*******************************************************************************
+ * ROFI Color theme - Modern Dark (mwg fixed)
+ *******************************************************************************/
+* {
+    /* Core backgrounds */
+    background:          @surface;
+    background-alt:      @surface-container;
+    selected-background: @surface-container-high;
+    
+    /* Semantic backgrounds */
+    bg-primary: @surface;
+    bg-input:   @surface-container;
+    bg-hover:   @surface-container-high;
+
+    /* Foregrounds */
+    fg-primary:   @on-surface;
+    fg-secondary: @on-surface-variant;
+
+    /* Accents & borders */
+    accent:       @primary;
+    border-color: @outline-variant;
+
+    text-color: @fg-primary;
+    icon-background: transparent;
+    transparency: "real";
+    spacing: 0;
+    margin: 0;
+    padding: 0;
+}
+
+configuration {
+    show-icons: true;
+    font: "Google Sans 11";
+    display-drun: "Search";
+    drun-display-format: "{name}";
+}
+
+/* ================= Window ================= */
+window {
+    background-color: @bg-primary;
+    border: 1px;
+    border-color: @border-color;
+    border-radius: 12px;
+    padding: 20px;
+    width: 1000px;
+}
+
+/* ================= Layout ================= */
+mainbox {
+    spacing: 15px;
+    children: [ inputbar, listview ];
+}
+
+/* ================= Input ================= */
+inputbar {
+    background-color: @bg-input;
+    border-radius: 8px;
+    padding: 12px 16px;
+    spacing: 10px;
+    children: [ prompt, entry ];
+}
+
+prompt {
+    enabled: true;
+    text-color: @fg-secondary;
+}
+
+entry {
+    placeholder: "Search";
+    placeholder-color: @fg-secondary;
+    text-color: @fg-primary;
+}
+
+/* ================= List ================= */
+listview {
+    columns: 4;
+    background-color: transparent;
+    lines: 3;
+    spacing: 12px;
+    cycle: false;
+    dynamic: true;
+    layout: vertical;
+    fixed-height: true;
+    fixed-columns: true;
+}
+/* ================= Elements ================= */
+element {
+    orientation: vertical;
+    border-radius: 8px;
+    padding: 20px 15px;
+    spacing: 8px;
+     background-color: transparent;
+}
+element alternate {
+    orientation: vertical;
+    border-radius: 8px;
+    padding: 20px 15px;
+    spacing: 8px;
+     background-color: transparent;
+}
+element alternate.normal {
+    orientation: vertical;
+    border-radius: 8px;
+    padding: 20px 15px;
+    spacing: 8px;
+     background-color: transparent;
+
+}
+element selected {
+     background-color: @bg-primary;
+    border: 2px;
+    border-color: @accent;
+}
+
+/* ================= Icons & Text ================= */
+element-icon {
+    size: 48px;
+    horizontal-align: 0.5;
+
+    background-color: transparent;
+    text-color:       inherit;
+
+}
+
+element-text {
+    font: "Google Sans 10";
+    horizontal-align: 0.5;
+    vertical-align: 0.5;
+    text-color: @fg-primary;
+    background-color: transparent;
+}
+
+
+message,
+textbox,
+mode-switcher,
+button,
+case-indicator,
+scrollbar {
+    enabled: false;
+}
+
+
+

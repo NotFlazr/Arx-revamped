@@ -1,0 +1,132 @@
+@import "colors.rasi"
+/*******************************************************************************
+ * ROFI Color theme – Material You Dark (List Launcher)
+ *******************************************************************************/
+
+configuration {
+    show-icons: false;
+    font: "Sans 10";
+    display-drun: "Search Themes";
+    drun-display-format: "{name}";
+}
+
+/* ================= Global ================= */
+* {
+    /* Core surfaces */
+    background:          @surface;
+    background-alt:      @surface-container;
+    selected-background: @surface-container-high;
+
+    /* Semantic surfaces */
+    bg-primary:   @surface;
+    bg-input:     @surface-container;
+    bg-selected:  @surface-container-high;
+
+    /* Foregrounds */
+    fg-primary:     @on-surface;
+    fg-secondary:   @on-surface-variant;
+    fg-placeholder: @on-surface-variant;
+
+    /* Accents & borders */
+    accent:       @primary;
+    border-color: @outline-variant;
+
+    text-color: @fg-primary;
+
+    spacing: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/* ================= Window ================= */
+window {
+    background-color: @bg-primary;
+    border: 1px;
+    border-color: @border-color;
+    border-radius: 8px;
+    padding: 14px;
+    width: 400px;
+}
+
+/* ================= Layout ================= */
+mainbox {
+    background-color: @surface;
+    spacing: 10px;
+    children: [ inputbar, listview ];
+}
+
+
+/* ================= Input ================= */
+inputbar {
+    background-color: @bg-input;
+    border: 1px;
+    border-color: @border-color;
+    border-radius: 6px;
+    padding: 10px 12px;
+    spacing: 8px;
+    children: [ prompt, entry ];
+}
+
+prompt {
+    enabled: true;
+    background-color: transparent;
+    text-color: @fg-secondary;
+}
+
+entry {
+    background-color: transparent;
+    placeholder: "Search themes...";
+    placeholder-color: @fg-placeholder;
+    text-color: @fg-primary;
+}
+entry {
+    placeholder: "Search themes...";
+    placeholder-color: @fg-placeholder;
+    text-color: @fg-primary;
+}
+
+/* ================= List ================= */
+listview {
+    background-color: @surface;
+    columns: 1;
+    lines: 8;
+    spacing: 2px;
+    cycle: false;
+    dynamic: true;
+    layout: vertical;
+    scrollbar: false;
+}
+/* ================= Elements ================= */
+element {
+    background-color: transparent;
+    text-color: @fg-primary;
+    border-radius: 4px;
+    padding: 8px 12px;
+}
+
+element normal {
+    background-color: transparent;
+}
+
+element selected {
+    background-color: @bg-selected;
+    text-color: @fg-primary;
+}
+
+/* ================= Text ================= */
+element-text {
+    background-color: transparent;
+    text-color: inherit;
+    vertical-align: 0.5;
+}
+
+/* ================= Cleanup ================= */
+message,
+textbox,
+mode-switcher,
+button,
+case-indicator,
+scrollbar {
+    enabled: false;
+}
+

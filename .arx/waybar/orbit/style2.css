@@ -1,0 +1,164 @@
+@import url("colors.css");
+
+* {
+    /* Use a standard font size for clarity on a slim bar */
+    font-family: "Google Sans Flex","JetBrainsMono Nerd Font Propo", sans-serif;
+    font-size: 13px;
+    /* Remove default margins/padding from all elements to start fresh */
+    margin: 0;
+    padding: 0;
+}
+
+window#waybar {
+    background-color: @background;
+    border-radius: 9px;
+    border: 2px solid @border;
+    color: #ffffff;
+    /* This controls the bar height - set vertical padding very low */
+    padding: 2px 5px; 
+    min-height: 0; 
+}
+
+/* --- BRINGING MODULES CLOSER --- */
+#tray,
+#bluetooth,
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#wireplumber,
+#custom-media,
+#tray,
+#mode,
+#idle_inhibitor,
+#scratchpad,
+#power-profiles-daemon,
+#mpd,
+#language,
+#keyboard-state {
+  background: transparent;
+    padding: 0 2px; /* Reduced padding between modules */
+    margin: 0;      /* Removed margins to keep them tight */
+    color: #ffffff;
+}
+#backlight {
+    padding: 0 10 0 2px;
+    color: @bl;
+}
+#pulseaudio {
+    padding: 0 2 0 5px;
+    color: @pu;
+}
+#bluetooth {
+    padding: 0 2 0 0px;
+    color:  @blue;
+}
+/* Specific tightening for the center and sides */
+#window,
+#workspaces {
+    margin: 0 1px;
+}
+#network {
+    padding: 0 3 0 3px;
+    color: @wi;
+}
+#clock {
+    color: @c;
+    
+}
+/* --- SLIM WORKSPACES --- */
+
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+
+
+#workspaces {
+
+padding: 0 0 0 2px;
+
+font-size: small;
+
+}
+
+/* you can set a style on hover for any module like this */
+
+
+
+
+
+#workspaces button {
+
+padding: 0 0 0 0px;
+
+background-color: transparent;
+
+color: @w;
+
+}
+
+#workspaces button.active {
+
+padding: 0 0 0 0px;
+color: @wa;
+}
+
+
+
+
+
+#workspaces button.urgent {
+
+color: #eb4d4b;
+
+}
+
+
+
+/* --- SLIM SLIDERS --- */
+
+#backlight-slider trough,
+#pulseaudio-slider {
+    padding: 0;
+    margin: 0;
+}
+#pulseaudio-slider slider {
+    min-height: 0px;
+    min-width: 0px;
+    opacity: 0;
+    background-image: none;
+    border: none;
+    box-shadow: none;
+}
+#pulseaudio-slider trough {
+    min-height: 10px;
+    min-width: 1px;
+    border-radius: 5px;
+    background: black;
+}
+#pulseaudio-slider highlight {
+    min-width: 1px;
+    border-radius: 5px;
+    background: green;
+}
+/* --- UTILITY & STATES --- */
+
+#battery.charging, #battery.plugged {
+    color: #ffffff;
+    background-color: #26A65B;
+}
+#tray {
+  padding: 3px;
+  font-size: 1px;
+}
+#network.disconnected {
+    color: #f53c3c;
+}
+#custom-arch {
+    font-size: large;
+    padding: 0 0 0 10px;
+    color: @a;
+}
