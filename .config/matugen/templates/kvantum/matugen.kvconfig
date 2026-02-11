@@ -1,0 +1,7 @@
+[General]
+author=matugen
+comment=Auto-generated theme
+
+[%General]
+accent_color={{colors.primary.default.hex}}
+base_color={{colors.surface.default.hex}}

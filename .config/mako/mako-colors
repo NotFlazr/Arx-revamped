@@ -1,6 +1,6 @@
-background-color=#130d07
-text-color=#efe0d5
-border-color=#51453a
+background-color=#0d0e13
+text-color=#e3e1e9
+border-color=#45464f
 # Per-mode settings
 
 [mode=do-not-disturb]
